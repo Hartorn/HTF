@@ -1,0 +1,6 @@
+[submodule "htf-core"]
+	path = htf-core
+	url = https://github.com/Hartorn/htf-core.git
+[submodule "htf-db"]
+	path = htf-db
+	url = https://github.com/Hartorn/htf-db.git
