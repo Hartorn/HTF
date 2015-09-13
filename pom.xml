@@ -22,31 +22,7 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<!-- Maven Ant Run : task used for generating source -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-antrun-plugin</artifactId>
-					<version>1.8</version>
-					<dependencies>
-						<dependency>
-							<groupId>org.apache.ant</groupId>
-							<artifactId>ant</artifactId>
-							<version>1.9.4</version>
-						</dependency>
-						<dependency>
-							<groupId>ant-contrib</groupId>
-							<artifactId>ant-contrib</artifactId>
-							<version>1.0b3</version>
-						</dependency>
-						<dependency>
-							<groupId>com.googlecode.fmpp-maven-plugin</groupId>
-							<artifactId>fmpp-maven-plugin</artifactId>
-							<version>1.0</version>
-						</dependency>
-					</dependencies>
-				</plugin>
 				<!-- Maven Compiler : task used for compiling java classes -->
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -54,33 +30,26 @@
 					<configuration>
 						<source>1.8</source>
 						<target>1.8</target>
-						<!-- <annotationProcessors> -->
-						<!-- <annotationProcessor> -->
-						<!-- org.atteo.classindex.processor.ClassIndexProcessor -->
-						<!-- </annotationProcessor> -->
-						<!-- </annotationProcessors> -->
-
 						<useIncrementalCompilation>false</useIncrementalCompilation>
 						<showWarnings>true</showWarnings>
 						<showDeprecation>true></showDeprecation>
-						<!-- <proc>only</proc> -->
-						<!-- <compilerArgument>-proc:none</compilerArgument> -->
 					</configuration>
 				</plugin>
 				<!-- Maven Tomcat Plugin -->
-				<plugin>
-					<groupId>org.apache.tomcat.maven</groupId>
-					<artifactId>tomcat7-maven-plugin</artifactId>
-					<version>2.2</version>
-					<!-- <configuration> -->
-					<!-- <path>/${project.build.finalName}</path> -->
-					<!-- </configuration> -->
-				</plugin>
+				<!-- <plugin> -->
+				<!-- <groupId>org.apache.tomcat.maven</groupId> -->
+				<!-- <artifactId>tomcat7-maven-plugin</artifactId> -->
+				<!-- <version>2.2</version> -->
+				<!-- <configuration> -->
+				<!-- <path>/${project.build.finalName}</path> -->
+				<!-- </configuration> -->
+				<!-- </plugin> -->
 			</plugins>
 		</pluginManagement>
 	</build>
 	<dependencyManagement>
 		<dependencies>
+			<!-- Dependencies for htf-core -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
@@ -111,6 +80,22 @@
 				<groupId>org.apache.tika</groupId>
 				<artifactId>tika-core</artifactId>
 				<version>1.8</version>
+			</dependency>
+			<!-- Dependencies for htf-db -->
+			<dependency>
+				<groupId>org.apache.maven</groupId>
+				<artifactId>maven-plugin-api</artifactId>
+				<version>3.3.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.maven.plugin-tools</groupId>
+				<artifactId>maven-plugin-annotations</artifactId>
+				<version>3.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>2.3.22</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
